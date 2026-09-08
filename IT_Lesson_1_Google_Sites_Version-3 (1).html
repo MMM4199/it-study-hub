@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Lesson 1 — Advanced Study Hub</title>
+<style>
+:root{--bg:#08111f;--panel:#101d31;--panel2:#162740;--text:#edf5ff;--muted:#a9bad1;--accent:#64d8ff;--accent2:#a78bfa;--good:#4ade80;--bad:#fb7185;--line:#2b4262}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at top,#19365d 0,#08111f 42%);color:var(--text);line-height:1.6}
+header{padding:70px 20px 55px;text-align:center;overflow:hidden;position:relative}
+header:before,header:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);opacity:.35;animation:float 8s ease-in-out infinite}
+header:before{width:180px;height:180px;background:var(--accent);left:8%;top:20px}header:after{width:220px;height:220px;background:var(--accent2);right:5%;top:80px;animation-delay:2s}
+header>*{position:relative;z-index:1}h1{font-size:clamp(2rem,6vw,4.5rem);line-height:1.1;margin:0 0 14px}header p{max-width:720px;margin:auto;color:#c8d8ed;font-size:1.1rem}
+nav{position:sticky;top:0;z-index:20;background:#0b1728dd;backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:12px}
+nav a,button{font:inherit}nav a{color:var(--muted);text-decoration:none;padding:7px 12px;border-radius:999px}nav a:hover{background:#203653;color:white}
+main{max-width:1100px;margin:auto;padding:24px 16px 70px}.panel{background:linear-gradient(145deg,#12223aee,#0e1a2cee);border:1px solid var(--line);border-radius:24px;padding:26px;margin:22px 0;box-shadow:0 14px 45px #0003;animation:rise .7s ease both}
+h2{margin-top:0;color:var(--accent);font-size:1.7rem}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}.card{background:#172943;border:1px solid #2a4566;border-radius:17px;padding:18px;transition:.25s;min-width:0}.card:hover{transform:translateY(-5px);border-color:var(--accent)}.icon{font-size:2rem}.tag{display:inline-block;background:#233b5d;color:#bcecff;border-radius:999px;padding:3px 10px;font-size:.8rem}
+.progress-wrap{height:13px;background:#07101d;border-radius:99px;overflow:hidden;border:1px solid var(--line)}.progress{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .5s}
+.stats{display:flex;gap:12px;flex-wrap:wrap}.stat{flex:1;min-width:130px;background:#0b1728;border:1px solid var(--line);border-radius:15px;padding:14px}.stat b{display:block;font-size:1.6rem;color:white}
+button{background:linear-gradient(135deg,#267da6,#6754b9);color:white;border:0;border-radius:12px;padding:11px 16px;cursor:pointer;font-weight:700;transition:.2s;margin:4px}button:hover{transform:translateY(-2px);filter:brightness(1.12)}button.secondary{background:#243955}button.good{background:#187a4a}button.bad{background:#8d3048}
+.timeline{display:grid;gap:12px}.stage{display:grid;grid-template-columns:65px 1fr;gap:15px;align-items:start;padding:16px;border-left:4px solid var(--accent2);background:#12243d;border-radius:0 15px 15px 0}.stage .num{font-size:2rem;text-align:center}
+.flashcard{perspective:1000px;max-width:650px;margin:15px auto}.flash-inner{height:260px;position:relative;transform-style:preserve-3d;transition:transform .7s;cursor:pointer}.flashcard.flipped .flash-inner{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:22px;border:1px solid #42648e;background:linear-gradient(135deg,#193b61,#34285f);display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;font-size:1.45rem}.back{transform:rotateY(180deg);background:linear-gradient(135deg,#145044,#263d70);font-size:1.15rem}
+.quiz-question{background:#0c192b;border:1px solid var(--line);border-radius:17px;padding:18px;margin:14px 0}.option{display:block;width:100%;text-align:left;background:#1a2d48;margin:8px 0}.option.selected{outline:2px solid var(--accent)}.option.correct{background:#155b3d}.option.incorrect{background:#713044}.hidden{display:none!important}.timer{font-size:2rem;color:#ffd166;font-weight:800}.exam-controls{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.result{padding:15px;border-radius:14px;background:#132b25;border:1px solid #2f805d}.warning{background:#352c18;border:1px solid #80652f;padding:13px;border-radius:13px;color:#ffe6a3}
+footer{text-align:center;color:var(--muted);padding:30px}@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@keyframes float{50%{transform:translate(25px,18px) scale(1.08)}}@media(max-width:600px){header{padding:50px 15px}.panel{padding:19px;border-radius:18px}.stage{grid-template-columns:45px 1fr}.face{font-size:1.15rem;height:230px}.flash-inner{height:230px}}
+</style>
+</head>
+<body>
+<div style="background:#fff3cd;color:#5c4400;padding:12px 16px;text-align:center;
+font-family:Arial,sans-serif;font-size:14px;border-bottom:1px solid #e0b94f;">
+<b>Google Sites version:</b> This is a self-contained study app. Embed this HTML
+inside Google Sites using an HTML embed provider or host it on a web host, then
+use <b>Insert → Embed → By URL</b>.
+</div>
+
+<header>
+  <div class="tag">PROGRAMMING & AI • LESSON 1</div>
+  <h1>Information Technology<br><span style="color:var(--accent)">Study Hub</span></h1>
+  <p>Learn the lesson, flip the cards, earn points, and challenge yourself in exam mode.</p>
+</header>
+<nav>
+  <a href="#learn">Learn</a><a href="#flashcards">Flashcards</a><a href="#practice">Practice</a><a href="#exam">Exam</a>
+</nav>
+<main>
+<section class="panel" id="dashboard">
+<h2>🏆 Your Progress</h2>
+<div class="stats"><div class="stat">Score<b id="score">0</b></div><div class="stat">Correct answers<b id="correct">0</b></div><div class="stat">Best exam<b id="best">0%</b></div><div class="stat">Level<b id="level">Beginner</b></div></div>
+<p class="muted">Learning progress</p><div class="progress-wrap"><div class="progress" id="progress"></div></div>
+<p id="status" class="muted">Start learning to earn points.</p>
+</section>
+
+<section class="panel" id="learn">
+<h2>🧭 The Big Picture</h2>
+<p><b>Information Technology (IT)</b> is the use of computers, software, networks and digital systems to store, process, protect and share information.</p>
+<div class="timeline">
+<div class="stage"><div class="num">🖥️</div><div><b>1. Birth of computers</b><br>Huge machines such as ENIAC performed calculations. Early computers could fill a whole room.</div></div>
+<div class="stage"><div class="num">🌐</div><div><b>2. Commercial Internet</b><br>Computers became connected, allowing information to travel around the world.</div></div>
+<div class="stage"><div class="num">📱</div><div><b>3. Smartphones</b><br>Computing became portable and available almost everywhere.</div></div>
+<div class="stage"><div class="num">☁️</div><div><b>4. Cloud computing</b><br>Computing power, storage and software became services delivered through the Internet.</div></div>
+</div>
+<div class="warning"><b>Exam order:</b> Computer → Internet → Smartphone → Cloud</div>
+</section>
+
+<section class="panel">
+<h2>⚡ Key Concepts</h2>
+<div class="grid">
+<div class="card"><div class="icon">📈</div><h3>Moore's Law</h3><p>Transistors on a chip roughly double every two years. This helped computing power increase dramatically.</p></div>
+<div class="card"><div class="icon">☁️</div><h3>Cloud</h3><p>Remote servers provide storage, software and computing through the Internet.</p></div>
+<div class="card"><div class="icon">📍</div><h3>Edge computing</h3><p>Data is processed near or on the device itself, reducing delay.</p></div>
+<div class="card"><div class="icon">🤖</div><h3>AI</h3><p>Computers learn patterns and make predictions or decisions using data.</p></div>
+</div>
+</section>
+
+<section class="panel">
+<h2>🌍 Five Social Changes</h2>
+<div class="grid">
+<div class="card"><h3>📲 SNS</h3><p>Connect, post and share information rapidly.</p></div>
+<div class="card"><h3>🛒 E-commerce</h3><p>Buying and selling through the Internet.</p></div>
+<div class="card"><h3>🏠 Remote work</h3><p>Working from home or another remote location online.</p></div>
+<div class="card"><h3>🎓 Online learning</h3><p>Classes and study materials delivered online.</p></div>
+<div class="card"><h3>💳 Cashless payment</h3><p>Paying with cards, mobile apps or QR codes without cash.</p></div>
+</div>
+</section>
+
+<section class="panel">
+<h2>🚀 Emerging Technologies</h2>
+<div class="grid">
+<div class="card"><h3>🚗 Autonomous driving</h3><p>AI uses cameras and sensors to drive a vehicle without human operation.</p></div>
+<div class="card"><h3>🕶️ AR</h3><p>Overlays digital information on real-world images.</p></div>
+<div class="card"><h3>🥽 VR</h3><p>Immerses users in a computer-generated virtual space.</p></div>
+<div class="card"><h3>⚛️ Quantum computing</h3><p>Uses quantum mechanics to solve certain difficult calculations more efficiently.</p></div>
+</div>
+</section>
+
+<section class="panel" id="flashcards">
+<h2>🃏 Flashcards</h2><p class="muted">Click the card to flip it. Use the buttons to move through the deck.</p>
+<div class="flashcard" id="flashcard" onclick="flipCard()"><div class="flash-inner"><div class="face" id="front"></div><div class="face back" id="back"></div></div></div>
+<div style="text-align:center"><button class="secondary" onclick="previousCard()">← Previous</button><span id="cardCount" class="muted"></span><button onclick="nextCard()">Next →</button><br><button class="good" onclick="markCard(true)">I knew it +5</button><button class="bad" onclick="markCard(false)">Review it</button></div>
+</section>
+
+<section class="panel" id="practice">
+<h2>🎯 Practice Mode</h2><p class="muted">Answer each question. Correct answers earn 10 points.</p>
+<div id="practiceArea"></div>
+<button onclick="resetPractice()" class="secondary">Reset practice</button>
+</section>
+
+<section class="panel" id="exam">
+<h2>⏱️ Exam Mode</h2>
+<p>Five questions, 60 seconds, one final score. Your best percentage is saved during this session.</p>
+<div id="examStart"><button onclick="startExam()">Start exam</button></div>
+<div id="examArea" class="hidden">
+<div class="exam-controls"><span>Question <b id="examNumber">1</b>/5</span><span class="timer" id="timer">60</span></div>
+<div id="examQuestion"></div>
+<div class="exam-controls"><button class="secondary" onclick="previousExam()">← Back</button><button onclick="nextExam()">Next →</button></div>
+</div>
+<div id="examResult" class="hidden"></div>
+</section>
+</main>
+<footer>Keep revising: understand the idea, then practice recalling it. 💻</footer>
+
+<script>
+const flashcards=[
+["What is Information Technology?","Using computers and digital systems to store, process, protect and share information."],
+["What is ENIAC?","One of the first general-purpose electronic digital computers, completed in 1945."],
+["What is Moore's Law?","The observation that transistor numbers on a chip roughly double about every two years."],
+["What is cloud computing?","Using computing services such as storage and software through the Internet."],
+["What is edge computing?","Processing data near or on the device instead of sending everything to the cloud."],
+["What is SNS?","A service that lets users connect, post and share information."],
+["What is e-commerce?","Buying and selling goods or services through the Internet."],
+["AR or VR: which overlays digital information on reality?","AR. VR immerses the user in a computer-generated virtual space."],
+["Why is edge computing useful for autonomous driving?","It allows rapid local decisions without waiting for a remote server."],
+["What is cashless payment?","Payment using electronic money, cards, apps or QR codes without cash."]
+];
+let cardIndex=0, score=0, correct=0, practiceIndex=0, examIndex=0, examAnswers=[], examTimer=null, seconds=60;
+const practice=[
+["Which is the correct IT development order?",["Smartphone → Computer → Internet → Cloud","Computer → Internet → Smartphone → Cloud","Cloud → Internet → Computer → Smartphone"],1],
+["What does e-commerce mean?",["Buying and selling through the Internet","Working from home","Sharing photos on SNS"],0],
+["Which technology overlays digital information on the real world?",["VR","Quantum computing","AR"],2],
+["Which technology processes data on the device itself?",["Edge computing","E-commerce","SNS"],0],
+["Which statement about Moore's Law is correct?",["It describes cashless payment","It says transistor numbers roughly double every two years","It is a type of virtual reality"],1]
+];
+const exam=practice.concat([
+["Which is an example of online learning?",["A class delivered through the Internet","Buying food with cash","Driving without sensors"],0],
+["What does VR do?",["Adds labels to a real image","Creates an immersive virtual space","Connects users on social media"],1]
+]).slice(0,5);
+
+function updateStats(){document.getElementById("score").textContent=score;document.getElementById("correct").textContent=correct;document.getElementById("progress").style.width=Math.min(100,score/2)+"%";let level=score>=100?"Master":score>=50?"Explorer":"Beginner";document.getElementById("level").textContent=level;document.getElementById("status").textContent=score?"Great work — keep building your recall!":"Start learning to earn points."}
+function addPoints(n){score+=n;updateStats()}
+function flipCard(){document.getElementById("flashcard").classList.toggle("flipped")}
+function renderCard(){document.getElementById("flashcard").classList.remove("flipped");document.getElementById("front").textContent=flashcards[cardIndex][0];document.getElementById("back").textContent=flashcards[cardIndex][1];document.getElementById("cardCount").textContent=`  ${cardIndex+1} / ${flashcards.length}  `}
+function nextCard(){cardIndex=(cardIndex+1)%flashcards.length;renderCard()}
+function previousCard(){cardIndex=(cardIndex-1+flashcards.length)%flashcards.length;renderCard()}
+function markCard(knew){if(knew)addPoints(5);nextCard()}
+function renderPractice(){let q=practice[practiceIndex];let html=`<div class="quiz-question"><b>${practiceIndex+1}. ${q[0]}</b>`;q[1].forEach((o,i)=>html+=`<button class="option" onclick="answerPractice(${i})">${o}</button>`);html+=`<p id="practiceFeedback" class="muted"></p></div>`;document.getElementById("practiceArea").innerHTML=html}
+function answerPractice(i){let q=practice[practiceIndex], buttons=document.querySelectorAll("#practiceArea .option");buttons.forEach(b=>b.disabled=true);buttons[i].classList.add(i===q[2]?"correct":"incorrect");let f=document.getElementById("practiceFeedback");if(i===q[2]){f.textContent="✅ Correct! +10 points";f.className="correct";correct++;addPoints(10)}else{f.textContent="❌ Review the lesson and try the next one.";f.className="wrong"}setTimeout(()=>{practiceIndex=(practiceIndex+1)%practice.length;renderPractice()},900)}
+function resetPractice(){practiceIndex=0;renderPractice()}
+function startExam(){examIndex=0;examAnswers=[];seconds=60;document.getElementById("examStart").classList.add("hidden");document.getElementById("examArea").classList.remove("hidden");document.getElementById("examResult").classList.add("hidden");renderExam();clearInterval(examTimer);examTimer=setInterval(()=>{seconds--;document.getElementById("timer").textContent=seconds;if(seconds<=0)finishExam()},1000)}
+function renderExam(){let q=exam[examIndex],chosen=examAnswers[examIndex];document.getElementById("examNumber").textContent=examIndex+1;let h=`<div class="quiz-question"><h3>${q[0]}</h3>`;q[1].forEach((o,i)=>h+=`<button class="option ${chosen===i?"selected":""}" onclick="chooseExam(${i})">${o}</button>`);h+="</div>";document.getElementById("examQuestion").innerHTML=h}
+function chooseExam(i){examAnswers[examIndex]=i;renderExam()}
+function nextExam(){if(examIndex<exam.length-1){examIndex++;renderExam()}else finishExam()}
+function previousExam(){if(examIndex>0){examIndex--;renderExam()}}
+function finishExam(){clearInterval(examTimer);let points=exam.reduce((n,q,i)=>n+(examAnswers[i]===q[2]?1:0),0),pct=Math.round(points/exam.length*100);score+=points*15;correct+=points;let best=Math.max(Number(sessionStorage.getItem("itBest")||0),pct);sessionStorage.setItem("itBest",best);document.getElementById("best").textContent=best+"%";updateStats();document.getElementById("examArea").classList.add("hidden");document.getElementById("examResult").classList.remove("hidden");document.getElementById("examResult").innerHTML=`<div class="result"><h3>Exam complete! 🎉</h3><p>You scored <b>${points}/${exam.length}</b> (${pct}%).</p><p>${pct>=80?"Excellent understanding!":"Review the flashcards and try again."}</p><button onclick="startExam()">Retake exam</button></div>`;document.getElementById("examStart").classList.remove("hidden")}
+document.getElementById("best").textContent=(sessionStorage.getItem("itBest")||0)+"%";renderCard();renderPractice();updateStats();
+</script>
+</body>
+</html>
